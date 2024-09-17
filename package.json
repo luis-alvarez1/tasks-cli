@@ -10,6 +10,9 @@
     "keywords": [],
     "author": "Luis Alvarez",
     "license": "MIT",
+    "bin": {
+        "tasks-cli": "dist/index.js"
+    },
     "description": "",
     "devDependencies": {
         "@types/node": "^22.5.5",
