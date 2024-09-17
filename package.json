@@ -1,0 +1,20 @@
+{
+    "name": "tasks-cli",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/server.js",
+        "build": "tsc",
+        "start:dev": "npx nodemon"
+    },
+    "keywords": [],
+    "author": "Luis Alvarez",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "@types/node": "^22.5.5",
+        "nodemon": "^3.1.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.2"
+    }
+}
