@@ -1,7 +1,6 @@
 import fs from "fs";
 import chalk from "chalk";
-import { iTask } from "../interfaces/Task";
-import { TaskStatus } from "../interfaces/TaskStatus";
+import { TaskStatus, iTask } from "../interfaces";
 
 export class TaskManager {
     private tasks: iTask[];
@@ -39,9 +38,11 @@ export class TaskManager {
     listTasks(status: boolean | null = null) {
         let filteredTasks = this.tasks;
 
-        // if no status is passed, prints all tasks
+        // if status is passed, prints tasks that matches status
         if (status !== null) {
-            filteredTasks.map((task) => task.status === status);
+            filteredTasks = filteredTasks.filter(
+                (task) => task.status === status
+            );
         }
 
         console.log(chalk.yellowBright("TASKS:"));

@@ -1,8 +1,15 @@
 #!/usr/bin/env node
 
-import path from "path";
-import { TaskManager } from "./models/TaskManager";
+import chalk from "chalk";
+import { matchCommand } from "./actions/matchCommand";
+import { TaskCommand } from "./interfaces";
 
-const filePath = path.join(__dirname, "data/tasks.json");
+const [, , command, ...args] = process.argv;
 
-const taskManager = new TaskManager(filePath);
+// matchCommand["add"](["do things"]);
+// matchCommand["list"]([]);
+// if (command in matchCommand) {
+//     // matchCommand[command as TaskCommand](args);
+// } else {
+//     console.log(chalk.redBright("Unknown command index"));
+// }
