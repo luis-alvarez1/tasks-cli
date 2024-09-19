@@ -34,8 +34,15 @@ export const matchCommand = {
 
         taskManager.listTasks(status);
     },
-    [TaskCommand.delete]: () => {},
-    [TaskCommand.update]: () => {},
-    [TaskCommand.markCompleted]: () => {},
-    [TaskCommand.markPending]: () => {},
+    [TaskCommand.delete]: (args: string[]) => {
+        const id = parseInt(args.join(""));
+        if (!isNaN(id)) {
+            taskManager.delete(id);
+        } else {
+            console.log(chalk.redBright("Unknown id"));
+        }
+    },
+    [TaskCommand.update]: (args: string[]) => {},
+    [TaskCommand.markCompleted]: (args: string[]) => {},
+    [TaskCommand.markPending]: (args: string[]) => {},
 };

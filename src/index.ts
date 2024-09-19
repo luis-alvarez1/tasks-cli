@@ -6,7 +6,7 @@ import { TaskCommand } from "./interfaces";
 
 const [, , command, ...args] = process.argv;
 
-// matchCommand["add"](["do things"]);
+// matchCommand["delete"](["asdasd"]);
 // matchCommand["list"]([]);
 // if (command in matchCommand) {
 //     // matchCommand[command as TaskCommand](args);
