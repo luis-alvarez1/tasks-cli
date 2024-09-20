@@ -42,7 +42,21 @@ export const matchCommand = {
             console.log(chalk.redBright("Unknown id"));
         }
     },
-    [TaskCommand.update]: (args: string[]) => {},
-    [TaskCommand.markCompleted]: (args: string[]) => {},
-    [TaskCommand.markPending]: (args: string[]) => {},
+    [TaskCommand.update]: (args: string[]) => {}, // TODO:
+    [TaskCommand.markCompleted]: (args: string[]) => {
+        const id = parseInt(args.join(""));
+        if (!isNaN(id)) {
+            taskManager.setStatus(id, true);
+        } else {
+            console.log(chalk.redBright("Unknown id"));
+        }
+    },
+    [TaskCommand.markPending]: (args: string[]) => {
+        const id = parseInt(args.join(""));
+        if (!isNaN(id)) {
+            taskManager.setStatus(id, false);
+        } else {
+            console.log(chalk.redBright("Unknown id"));
+        }
+    },
 };
