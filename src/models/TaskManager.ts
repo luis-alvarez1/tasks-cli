@@ -6,10 +6,19 @@ export class TaskManager {
     private tasks: iTask[];
 
     constructor(private filePath: string) {
-        // creates the file if doesn't exists
-        if (!fs.existsSync(filePath)) {
-            fs.writeFileSync(filePath, JSON.stringify([]));
+        let pathToFolder: string[] | string = filePath.split("/");
+        pathToFolder.pop();
+        pathToFolder = pathToFolder.join("/");
+
+        // creates the folder
+        if (!fs.existsSync(pathToFolder)) {
+            fs.mkdirSync(pathToFolder);
+            // creates the file if doesn't exists
+            if (!fs.existsSync(filePath)) {
+                fs.writeFileSync(filePath, JSON.stringify([]));
+            }
         }
+
         this.tasks = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     }
 

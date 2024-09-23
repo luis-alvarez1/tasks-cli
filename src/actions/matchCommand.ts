@@ -42,7 +42,15 @@ export const matchCommand = {
             console.log(chalk.redBright("Unknown id"));
         }
     },
-    [TaskCommand.update]: (args: string[]) => {}, // TODO:
+    [TaskCommand.update]: (args: string[]) => {
+        const [id, description] = args;
+
+        if (!isNaN(+id)) {
+            taskManager.update(+id, description);
+        } else {
+            console.log(chalk.redBright("Unknown id"));
+        }
+    },
     [TaskCommand.markCompleted]: (args: string[]) => {
         const id = parseInt(args.join(""));
         if (!isNaN(id)) {
