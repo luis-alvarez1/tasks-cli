@@ -27,22 +27,22 @@ Task Tracker CLI is a command-line interface (CLI) application to track and mana
 
 -   NPM
     ```sh
-    	npm install
+    npm install
     ```
 -   Yarn
     ```sh
-    	yarn install
+    yarn install
     ```
 
 3. Compile TypeScript to JavaScript:
 
 -   NPM
     ```sh
-    	npm run build
+    npm run build
     ```
 -   Yarn
     ```sh
-    	yarn build
+    yarn build
     ```
 
 4. Install the CLI on your system:
