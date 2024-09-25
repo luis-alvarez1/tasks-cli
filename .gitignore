@@ -1,3 +1,5 @@
 node_modules/
 dist/
 src/data/tasks.json
+src/test/data/tasks.json
+src/test/coverage/
