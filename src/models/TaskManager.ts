@@ -1,6 +1,7 @@
 import fs from "fs";
 import chalk from "chalk";
 import { TaskStatus, iTask } from "../interfaces";
+import { log } from "console";
 
 export class TaskManager {
     private tasks: iTask[];
@@ -24,6 +25,9 @@ export class TaskManager {
 
     saveTasks() {
         // saves the current state of the tasks array
+        log("guarda");
+        log(this.filePath, JSON.stringify(this.tasks, null, 2));
+
         fs.writeFileSync(this.filePath, JSON.stringify(this.tasks, null, 2));
     }
 
